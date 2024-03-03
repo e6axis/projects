@@ -1,0 +1,111 @@
+Controls.ButtonClicked = bt
+GraphicsWindow.Width = 240
+GraphicsWindow.Height = 230
+GraphicsWindow.Title = "Mini Calculator"
+GraphicsWindow.BackgroundColor = GraphicsWindow.GetColorFromRGB(240, 240, 240)
+GraphicsWindow.FontBold = "false"
+
+t = Controls.AddTextBox(10, 40)
+Controls.SetSize(t, 220, 20)
+Controls.SetTextBoxText(t, "")
+
+GraphicsWindow. BrushColor = "Blue"
+key7 = Controls.AddButton("7", 10, 95)
+Controls.SetSize(key7, 35, 25)
+key8 = Controls.AddButton("8", 56, 95)
+Controls.SetSize(key8, 35, 25)
+key9 = Controls.AddButton ("9", 102, 95)
+Controls.SetSize(key9, 35, 25)
+key4 = Controls.AddButton ("4", 10, 128)
+Controls.SetSize(key4, 35, 25)
+key5 = Controls.AddButton("5", 56, 128)
+Controls.SetSize(key5, 35, 25)
+key6 = Controls.AddButton("6", 102, 128)
+Controls.SetSize(key6, 35, 25)
+key1 = Controls.AddButton ("1", 10, 161)
+Controls.SetSize(key1, 35, 25)
+key2 = Controls.AddButton ("2", 56, 161)
+Controls.SetSize(key2, 35, 25)
+key3 = Controls.AddButton ("3", 102, 161)
+Controls.SetSize(key3, 35, 25)
+key0 = Controls.AddButton ("0", 10, 194)
+Controls.SetSize(key0, 35, 25)
+
+GraphicsWindow. BrushColor = "Red"
+keyBackspace = Controls.AddButton ("Backspace", 10, 58)
+Controls. SetSize(keyBackspace, 107, 25)
+KeyC = Controls.AddButton("C", 123, 58)
+Controls.SetSize(keyC, 107, 25)
+keydelenie = Controls.AddButton("/", 148, 95)
+Controls.SetSize(keydelenie, 35, 25)
+keysqrt = Controls.AddButton ("sqrt", 194, 95)
+Controls.SetSize(keysqrt, 35, 25)
+keyumnogenie = Controls.AddButton("*", 148, 128)
+Controls.SetSize(keyumnogenie, 35, 25)
+keynax = Controls.AddButton ("1/x", 194, 128)
+Controls.SetSize(keynax, 35, 25)
+keynplusminus = Controls.AddButton("+/-", 56, 194)
+Controls.SetSize(keynplusminus, 35, 25)
+keytochka = Controls.AddButton(".", 102, 194)
+Controls.SetSize(keytochka, 35, 25)
+keyminus = Controls.AddButton ("-", 148, 161)
+Controls.SetSize(keyminus, 35, 25)
+keyplus = Controls.AddButton("+", 148, 194)
+Controls.SetSize(keyplus, 35, 25)
+keyravno = Controls.AddButton("=", 194, 161)
+Controls.SetSize(keyravno, 35, 58)
+
+sub bt
+
+If Controls.LastClickedButton = key0 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "0"))
+ElseIf
+    Controls.LastClickedButton = key1 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "1"))
+ElseIf
+    Controls.LastClickedButton = key2 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "2"))
+ElseIf
+    Controls.LastClickedButton = key3 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "3"))
+ElseIf
+    Controls.LastClickedButton = key4 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "4"))
+ElseIf
+    Controls.LastClickedButton = key5 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "5"))
+ElseIf
+    Controls.LastClickedButton = key6 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "6"))
+ElseIf
+    Controls.LastClickedButton = key7 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "7"))
+    ElseIf
+    Controls.LastClickedButton = key8 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "8"))
+    ElseIf
+    Controls.LastClickedButton = key9 Then
+    Controls.SetTextBoxText(t, 
+    Text.Append(Controls.GetTextBoxText(t), "9"))
+EndIf
+
+If p = 0 Then
+    Controls.SetTextBoxText(t, Text.Append("-",
+    Controls.GetTextBoxText(t)))
+    p = 1
+Else
+    Controls.SetTextBoxText(t,
+    Math.Abs(Controls.GetTextBoxText(t)))
+    p = 0
+EndIf
+
+EndSub
